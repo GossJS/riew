@@ -1,6 +1,42 @@
 # Reiw - Presentation Broadcast System
 
 
+1. Вещание в существующей локальной сети 
+
+Вы получили IP-адрес в уже существующей сети, например 192.168.0.111
+
+Склонируйте репозиторий в папку:
+```
+https://github.com/GossJS/riew.git
+```
+
+Разделите консоль на три части: ./client, ./server и ./web-server
+
+В каждой части выполните yarn для загрузки зависимостей.
+
+```
+micro client/src/config.json
+```
+
+записываем этот IP 192.168.0.111 или подобный в раздел adress.
+
+```
+riew/client            		 	riew/server			riew/web-server	
+yarn run build-prod  		
+                       		 	node ./src/index.js		node ./src/index.js
+```
+
+Имя презентации slides.pdf в ./server/shared
+
+последний столбец (web-server) выдаёт http://169.254.169.195:8080/control.html
+
+Это пульт управления.
+
+Остальные подсоединяются к  http://169.254.169.195:8080
+
+
+
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
